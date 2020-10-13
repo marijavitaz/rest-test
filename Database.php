@@ -1,9 +1,9 @@
 <?php
 class Database
 {
-private $hostname="localhost";
-private $username="root";
-private $password="";
+private $hostname="itehrest-mysqldbserver.mysql.database.azure.com";
+private $username="mysqlrestuser@itehrest-mysqldbserver";
+private $password="mysqlrest_Pass";
 private $dbname;
 private $dblink; // veza sa bazom
 private $result; // Holds the MySQL query result
@@ -30,7 +30,7 @@ function Connect()
 {
 $this->dblink = new mysqli($this->hostname, $this->username, $this->password, $this->dbname);
 if ($this->dblink ->connect_errno) {
-    printf("Konekcija neuspešna: %s\n", $mysqli->connect_error);
+    printf("Konekcija neuspešna: %s\n", $this->dblink->connect_error);
     exit();
 }
 $this->dblink->set_charset("utf8");
