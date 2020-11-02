@@ -1,19 +1,19 @@
 <?php
 class Database
 {
-private $hostname="itehrest-mysqldbserver.mysql.database.azure.com";
-private $username="mysqlrestuser@itehrest-mysqldbserver";
-private $password="mysqlrest_Pass";
+private $hostname="localhost";
+private $username="root";
+private $password="";
 private $dbname;
 private $dblink; // veza sa bazom
 private $result; // Holds the MySQL query result
 private $records; // Holds the total number of records returned
 private $affected; // Holds the total number of affected rows
 function __construct($dbname)
-{
-$this->dbname = $dbname;
-                $this->Connect();
-}
+    {
+        $this->dbname = $dbname;
+        $this->Connect();
+    }
 /*
 function __destruct()
 {
@@ -86,6 +86,7 @@ if ($this->ExecuteQuery($delete))
 return true;
 else return false;
 }
+//ovo je komentar
 
 //funkcija za izvrsavanje upita
 function ExecuteQuery($query)
